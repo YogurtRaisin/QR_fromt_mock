@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/javascripts/jquery.qrcode.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Pay! <%= product_name %></p>
+    <div id="qrcode"></div>
+    <script>
+        $('#qrcode').qrcode({text: "hoge"});
+    </script>
+  </body>
+</html>
