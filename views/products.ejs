@@ -7,6 +7,8 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <input type="button" onclick="location.href='/products'"value="一覧">
+    <% products.forEach((val, key) => { %>
+        <input type="button" onclick="location.href='<%= '/products/' + val %>'" value= <%= val %> >
+    <% }); %>
   </body>
 </html>

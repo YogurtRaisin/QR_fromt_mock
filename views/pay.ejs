@@ -9,10 +9,15 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Pay! <%= product_name %></p>
+    <p>Pay! <%= productName %></p>
     <div id="qrcode"></div>
-    <script>
-        $('#qrcode').qrcode({text: "hoge"});
-    </script>
+    <% if(isPayCode) { %>
+        <script>
+            $('#qrcode').qrcode({text: "<%= payCode %>"});
+        </script>
+    <% } else { %>
+        <p>ERROR: don't get payCode</p>
+        <p><%= payErr %></p>
+    <% } %>
   </body>
 </html>
