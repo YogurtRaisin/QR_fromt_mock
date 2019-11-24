@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // controllerが使うべき
 const rp = require('request-promise');
@@ -9,11 +9,11 @@ const rp = require('request-promise');
 const products = ['sample', 'hoge', 'fuga'];
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('products', { title: 'sample_pay', products: products});
 });
 
-router.get('/:productName', function(req, res, next) {
+router.get('/:productName', (req, res, next) => {
   // controllerがすべき処理
   let apiRes, isPayCode, payErr;
   (async () => {
